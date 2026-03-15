@@ -1,24 +1,12 @@
 import React from "react";
-import Image from "next/image";
+import Header from "./components/Header";
+import ContactForm from "./components/ContactForm";
 
 export default function Home() {
   return (
     <>
       {/* HEADER */}
-      <header className="site-header">
-        <div className="container header-inner">
-          <div className="logo-wrap">
-            <Image src="/jam-logo.svg" alt="JAM" width={120} height={40} priority />
-          </div>
-          <nav className="nav">
-            <a href="#how">비즈니스 모델</a>
-            <a href="#results">성과</a>
-            <a href="#cases">성공 사례</a>
-            <a href="#process">프로세스</a>
-            <a href="#contact">문의하기</a>
-          </nav>
-        </div>
-      </header>
+      <Header />
 
       <main>
         {/* ── HERO ── */}
@@ -380,23 +368,23 @@ export default function Home() {
             <div className="contact-card">
               <div className="contact-card-inner">
                 <p className="contact-card-title">지금 바로 문의하기</p>
-                {[
-                  { icon: "📞", label: "한국", val: "+82-10-9637-1397" },
-                  { icon: "📞", label: "일본", val: "+81-90-4864-4598" },
-                  { icon: "✉️", label: "이메일", val: "info@jam-marketing.net" },
-                ].map(({ icon, label, val }) => (
-                  <div key={label} className="cinfo-row">
-                    <span className="cinfo-icon">{icon}</span>
-                    <div>
-                      <span className="cinfo-label">{label}</span>
-                      <span className="cinfo-val">{val}</span>
-                    </div>
-                  </div>
-                ))}
+                <ContactForm />
                 <div className="cinfo-divider" />
-                <a href="https://jameat.co.kr" target="_blank" rel="noopener noreferrer" className="btn primary" style={{ width: "100%", justifyContent: "center", marginTop: "4px" }}>
-                  JAMEAT 예약 플랫폼 바로가기
-                </a>
+                <div className="cinfo-direct">
+                  {[
+                    { icon: "📞", label: "한국", val: "+82-10-9637-1397" },
+                    { icon: "📞", label: "일본", val: "+81-90-4864-4598" },
+                    { icon: "✉️", label: "이메일", val: "info@jam-marketing.net" },
+                  ].map(({ icon, label, val }) => (
+                    <div key={label} className="cinfo-row">
+                      <span className="cinfo-icon">{icon}</span>
+                      <div>
+                        <span className="cinfo-label">{label}</span>
+                        <span className="cinfo-val">{val}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
