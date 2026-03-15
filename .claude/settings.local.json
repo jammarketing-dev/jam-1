@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c:*)",
+      "Bash(where:*)",
+      "Bash(py -3 -c:*)",
+      "Bash(python -m pip install:*)",
+      "Bash(python analyze_cpa.py:*)",
+      "Bash(set PYTHONIOENCODING=utf-8:*)",
+      "Bash(python rebuild_persona_md.py:*)",
+      "Bash(python run.py:*)",
+      "Bash(dir \"C:\\\\Users\\\\jamma\\\\OneDrive\\\\바탕 화면\\\\JAM 마케팅회사\\\\auto\\\\contents\" /od /b)",
+      "Bash(start:*)",
+      "Bash(python3:*)",
+      "Bash(PYTHONIOENCODING=utf-8 python3:*)",
+      "Bash(echo:*)",
+      "Bash(pip install:*)",
+      "Bash(chcp:*)",
+      "Bash(PYTHONIOENCODING=utf-8 python:*)"
+    ]
+  }
+}

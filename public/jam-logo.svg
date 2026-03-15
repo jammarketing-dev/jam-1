@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" fill="none">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffb347"/>
+      <stop offset="100%" stop-color="#ff6b4a"/>
+    </linearGradient>
+  </defs>
+  <!-- J -->
+  <path d="M8 8h6v18c0 4-2 6-6 6s-6-2-6-6h5c0 1.5 0.5 2 1 2s1-0.5 1-2V8z" fill="url(#g1)"/>
+  <!-- A -->
+  <path d="M22 32L30 8h4l8 24h-6l-1.5-5h-5l-1.5 5H22zm7.5-10h3l-1.5-6-1.5 6z" fill="url(#g1)"/>
+  <!-- M -->
+  <path d="M48 8h5l5 10 5-10h5v24h-6V20l-4 8-4-8v12h-6V8z" fill="url(#g1)"/>
+  <!-- 구분선 -->
+  <rect x="74" y="10" width="1" height="20" fill="rgba(255,255,255,0.2)" rx="1"/>
+  <!-- JAPAN ASSOCIATE MARKETING 작은 텍스트 -->
+  <text x="80" y="17" font-family="Arial, sans-serif" font-size="5.5" font-weight="600" fill="rgba(255,255,255,0.5)" letter-spacing="0.5">JAPAN ASSOCIATE</text>
+  <text x="80" y="26" font-family="Arial, sans-serif" font-size="5.5" font-weight="600" fill="rgba(255,255,255,0.5)" letter-spacing="0.5">MARKETING</text>
+</svg>
