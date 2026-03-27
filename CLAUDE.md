@@ -3,15 +3,16 @@
 > Next.js 마케팅 홈페이지
 > **GitHub**: https://github.com/jammarketingceo-creator/jam (main 브랜치)
 > **Vercel 연결**: jammarketing-dev Vercel 계정에서 연결 예정
-> **마지막 작업일**: 2026-03-24
+> **마지막 작업일**: 2026-03-26
 
 ---
 
 ## 스택
 
-- Next.js 14 App Router + Tailwind CSS v4 + plain CSS
+- Next.js 14 App Router + React 18 + Tailwind CSS v4 + plain CSS
 - Pretendard Variable 폰트 (CDN via jsdelivr)
-- 배포: Vercel
+- 배포: Vercel (static export 모드)
+- ⚠️ Next.js 16은 이 환경에서 Bus error 발생 → 14로 다운그레이드 (2026-03-26)
 
 ## 개발 명령어 (`jam-website/` 내에서 실행)
 
@@ -57,12 +58,38 @@ client_voices/ head_chef.png, female_manager.png, sushi_chef.png
 contact/     tokyo_alley.png, zen_garden.png
 ```
 
+## 아키텍처 (2026-03-26 v2 후킹 플로우 리팩토링)
+
+`page.tsx` → 10-섹션 후킹 플로우 구조로 전면 개편
+
+```
+app/
+├── page.tsx                    ← 51줄 (10섹션 조합)
+├── components/
+│   ├── Header.tsx              ← 햄버거 메뉴 + 반응형 네비게이션
+│   └── sections/
+│       ├── HeroSection.tsx     ← ① 빅넘버 후킹 (881만 카운터)
+│       ├── PainPoints.tsx      ← ② 페인 포인트 (4 카드)
+│       ├── TrustSection.tsx    ← ③ 신뢰 구축 (대기업 레퍼런스 + 고객 후기)
+│       ├── DataProof.tsx       ← ④ 데이터 증명 (6 통계 + TOP3 + 지역)
+│       ├── JameatPlatform.tsx  ← ⑤ JAMEAT 플랫폼 (4 강점 + 포트폴리오)
+│       ├── CpaModel.tsx        ← ⑥ CPA 모델 (4단계 플로우)
+│       ├── WhyKorea.tsx        ← ⑦ 한국 시장 (881만 + NAVER 데이터)
+│       ├── ServicesGallery.tsx  ← ⑧ 서비스 소개 (2x2 에디토리얼)
+│       ├── ContactSection.tsx  ← ⑨ 문의 CTA + 폼
+│       └── SiteFooter.tsx      ← ⑩ 푸터
+```
+
+모두 Server Component (Header만 "use client") — tsc 타입체크 ✅ · Next.js 14 빌드 ✅
+
 ## 잔여 작업
 
 | 항목 | 우선순위 |
 |------|---------|
-| GitHub push (에디토리얼 개편 커밋) | 🔴 높음 |
+| GitHub push (에디토리얼 개편 + 컴포넌트 리팩토링) | 🔴 높음 |
 | Vercel 연결 확인 | 🔴 높음 — jammarketing-dev 계정 |
+| 21st Magic으로 개별 컴포넌트 UI 고도화 | 중 |
+| 접근성 리뷰 (Design 플러그인) | 중 |
 | 창업자 실제 사진 교체 (박유이·주상원) | 중 — 사진 업로드 후 |
 | OG/Twitter 이미지 에디토리얼 업데이트 | 낮음 |
 | contact 배경 이미지 활용 | 낮음 |
