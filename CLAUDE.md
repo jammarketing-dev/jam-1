@@ -1,9 +1,9 @@
 # CLAUDE.md — jam-website (JAM 마케팅 홈페이지)
 
 > Next.js 마케팅 홈페이지
-> **GitHub**: https://github.com/jammarketingceo-creator/jam (main 브랜치, push 완료)
-> **Vercel 연결**: jammarketing-dev Vercel 계정에서 jammarketing-dev/jam-website repo 연결 예정
-> **마지막 작업일**: 2026-03-15
+> **GitHub**: https://github.com/jammarketingceo-creator/jam (main 브랜치)
+> **Vercel 연결**: jammarketing-dev Vercel 계정에서 연결 예정
+> **마지막 작업일**: 2026-03-24
 
 ---
 
@@ -23,29 +23,46 @@ npm run lint   # ESLint
 
 ---
 
-## 구현 상태 (2026-03-15 전면 개편)
+## 디자인 방향 (2026-03-24 에디토리얼 전면 개편)
+
+- **스타일**: Clean Minimal Editorial (Kinfolk/Cereal 매거진 톤)
+- **컬러**: 크림 배경 `#FAFAF7` + 골드 액센트 `#C9A96E` + 다크 텍스트 `#1A1A1A`
+- **이전 스타일**: 다크 테마 `#050509` + 오렌지 `#ff6b4a` → **폐기**
+- **이미지**: Higgsfield AI 생성 에디토리얼 사진 18장 (`public/images/`)
+- **레퍼런스**: advizexperts.fr (럭셔리 B2B 느낌)
+
+## 구현 상태
 
 | 섹션 | 상태 | 비고 |
 |------|------|------|
-| Header + JAM 로고 SVG | ✅ 완료 | 오렌지 그라디언트 워드마크 |
-| Hero (실제 통계 카드) | ✅ 완료 | 151개/42명/407건/¥5천만 (마스터 xlsx 기반) |
-| 비즈니스 플로우 다이어그램 | ✅ 완료 | 5단계 + 채널 배지 (NAVER/Instagram/YouTube/TikTok) |
-| JAMEAT 하이라이트 | ✅ 완료 | |
-| 실적 통계 + 지역 바 차트 | ✅ 완료 | 후쿠오카 72/오사카 41/홋카이도 33 |
-| 성공 사례 (3열 카드) | ✅ 완료 | 실제 데이터 기반 |
-| 타임라인 (온보딩 프로세스) | ✅ 완료 | |
-| 문의 섹션 | ✅ 완료 | |
+| Header + JAM 로고 SVG | ✅ | 에디토리얼 라이트 테마 |
+| Hero (풀 이미지 + 통계 스트립) | ✅ | 오마카세 이미지 + 151/42/407/¥5천만 |
+| 비즈니스 플로우 (5단계 그리드) | ✅ | 채널 배지 포함 |
+| JAMEAT 하이라이트 | ✅ | |
+| Services 이미지 갤러리 | ✅ 신규 | 4장 에디토리얼 사진 2x2 그리드 |
+| Portfolio 갤러리 | ✅ 신규 | 6장 음식/인테리어 사진 3열 + 호버 |
+| 실적 통계 + 지역 바 차트 | ✅ | |
+| 성공 사례 (3열 카드) | ✅ | |
+| Client Voices | ✅ 신규 | 3명 인물 포트레이트 + 후기 카드 |
+| 타임라인 (온보딩 프로세스) | ✅ | |
+| 문의 섹션 + 폼 | ✅ | |
+
+## 이미지 구조 (`public/images/`)
+
+```
+hero/        omakase.png, ramen_bowl.png, ginza.png
+services/    influencer.png, strategy.png, sns_flatlay.png, bts_photo.png
+portfolio/   sushi_nigiri.png, ramen_closeup.png, kaiseki.png, sake_pour.png, robatayaki.png, restaurant.png
+client_voices/ head_chef.png, female_manager.png, sushi_chef.png
+contact/     tokyo_alley.png, zen_garden.png
+```
 
 ## 잔여 작업
 
 | 항목 | 우선순위 |
 |------|---------|
-| 팀/서비스 실제 이미지 | 낮음 — 현재 letter avatar |
-| OG 이미지 생성 | 낮음 |
-
-## 완료 작업 (2026-03-15)
-
-| 항목 | 내용 |
-|------|------|
-| 모바일 햄버거 메뉴 | ✅ `Header.tsx` 클라이언트 컴포넌트 — 슬라이드 드로어 + 오버레이 |
-| 실제 문의 폼 | ✅ `ContactForm.tsx` 클라이언트 컴포넌트 — 이름/이메일/식당명/지역/내용 입력 + mailto 폴백 |
+| GitHub push (에디토리얼 개편 커밋) | 🔴 높음 |
+| Vercel 연결 확인 | 🔴 높음 — jammarketing-dev 계정 |
+| 창업자 실제 사진 교체 (박유이·주상원) | 중 — 사진 업로드 후 |
+| OG/Twitter 이미지 에디토리얼 업데이트 | 낮음 |
+| contact 배경 이미지 활용 | 낮음 |

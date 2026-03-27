@@ -25,13 +25,15 @@ export const metadata: Metadata = {
     siteName: "JAM – Japan Associate Marketing",
     title: "JAM – 일본 업체를 한국 시장으로 연결하는 원스톱 파트너",
     description:
-      "인플루언서 취재부터 CPA 성과 측정, JamEat 예약 연결까지. 일본 188개+ 제휴 점포와 함께 성장합니다.",
+      "인플루언서 취재부터 CPA 성과 측정, JamEat 예약 연결까지. 일본 151개+ 제휴 점포와 함께 성장합니다.",
+    // opengraph-image.tsx 자동 감지
   },
   twitter: {
     card: "summary_large_image",
     title: "JAM – Japan Associate Marketing",
     description:
       "일본 업체를 한국 시장으로 연결하는 원스톱 마케팅 파트너. 인플루언서·CPA·예약대행 통합 운영.",
+    // twitter-image.tsx 자동 감지
   },
   robots: {
     index: true,
