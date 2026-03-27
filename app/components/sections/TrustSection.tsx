@@ -3,9 +3,9 @@ import Image from "next/image";
 export default function TrustSection() {
   /* ── Tier 1: 즉시 인지 브랜드 ── */
   const tier1 = [
-    { name: "サッポロビール", sub: "SAPPORO BEER", note: "日本4大ビールブランド" },
-    { name: "星野リゾート", sub: "HOSHINO RESORTS", note: "日本最高級リゾートチェーン" },
-    { name: "銀だこ（オールウェイズ）", sub: "GINDACO", note: "日本最大たこ焼きチェーン" },
+    { name: "サッポロビール", note: "日本4大ビールブランド", logo: "/images/brands/sapporo.svg" },
+    { name: "星野リゾート", note: "日本最高級リゾートチェーン", logo: "/images/brands/hoshino.svg" },
+    { name: "銀だこ（オールウェイズ）", note: "日本最大たこ焼きチェーン", logo: "/images/brands/gindaco.svg" },
   ];
 
   /* ── Tier 2: 업계 인지 브랜드 ── */
@@ -51,12 +51,17 @@ export default function TrustSection() {
           </p>
         </div>
 
-        {/* Tier 1 — 대형 카드 */}
+        {/* Tier 1 — 로고 카드 */}
         <div className="trust-tier1">
           {tier1.map((b) => (
             <div className="trust-brand-card tier1" key={b.name}>
-              <p className="trust-brand-name">{b.name}</p>
-              <p className="trust-brand-sub">{b.sub}</p>
+              <Image
+                src={b.logo}
+                alt={b.name}
+                width={240}
+                height={52}
+                className="trust-brand-logo"
+              />
               <p className="trust-brand-note">{b.note}</p>
             </div>
           ))}

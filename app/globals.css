@@ -1896,6 +1896,19 @@ h2 {
   background: linear-gradient(145deg, rgba(201, 169, 110, 0.04), var(--bg-elevated));
 }
 
+.trust-brand-logo {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 12px;
+  opacity: 0.75;
+  transition: opacity 0.3s ease;
+}
+
+.trust-brand-card.tier1:hover .trust-brand-logo {
+  opacity: 1;
+}
+
 .trust-brand-name {
   font-size: 20px;
   font-weight: 700;
